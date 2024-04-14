@@ -1,26 +1,26 @@
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
 
-const description = document.getElementById('description')
+const sdescription = document.getElementById('description')
 var SevSelect = description.value
 
-const selectSev = document.getElementById('severity')
+const sSeverity = document.getElementById('severity')
 var SevSelect = selectSev.value
 
 var slocation = document.querySelector('#location')
 var sleng = document.querySelector('#leng')
 var swid = document.querySelector('#width')
 
-const selSection = document.getElementById('section')
+const sSection = document.getElementById('section')
 var section = selSection.value
 
-const selLayer = document.getElementById('layer')
+const sLayer = document.getElementById('layer')
 var layer = selLayer.value
 
-const selSuface = document.getElementById('suface')
+const sSuface = document.getElementById('suface')
 var suface = selSuface.value
 
-const selprogression = document.getElementById('progression')
+const sprogression = document.getElementById('progression')
 var progression= selectSev.value
 
 const bntSalvar = document.getElementById('#bntSalvar')
@@ -40,9 +40,17 @@ loadItens()
 function insertItem(item, index){
     let tr = document.createElement('tr')
     tr.innerHTML = `
+    <td>${item.description}</td>
     <td>${item.location}</td>
     <td>${item.length}</td>
     <td>${item.width}</td>
+    <td>${item.severity}</td>
+    <td>${item.section}</td>
+    <td>${item.layer}</td>
+    <td>${item.suface}</td>
+    <td>${item.progression}</td>
+   
+    
     <td class="acao">
     <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
   </td>
@@ -68,32 +76,33 @@ function openModal(edit = false, index = 0){
         modal.classList.remove('active')}
     }
     if(edit){
+        sdescription.value = itens[index].description
         slocation.value = itens[index].location
         sleng.value = itens[index].length
         swid.value = itens[index].width
-        .value = itens[index].
-        .value = itens[index].
-        .value = itens[index].
-        .value = itens[index].
-        .value = itens[index].
-        .value = itens[index].
+        sSeverity.value = itens[index].
+        sSection.value = itens[index].
+        sLayer.value = itens[index].
+        sSuface.value = itens[index].
+        sprogression.value = itens[index].
+        
         id = index
     } else{
         slocation.value = '';
         sleng.value = '';
         swid.value = '';
-        .value = '';
-        .value = '';
-        .value = '';
-        .value = '';
-        .value = '';
-        .value = '';
+        sLayer.value = '';
+        sSection.value = '';
+        sdescription.value = '';
+        sSuface.value = '';
+        sprogression.value = '';
+        sSeverity.value = '';
     }
 }
 
 bntSalvar.onclick = e =>{
-    if(slocation == '' || sleng == '' || swid == '' || == '' || == '' || == '' || == ''
-    || == '' || == '' || == ''){
+    if(slocation == '' || sleng == '' || swid == '' ||  sLayer == '' || sSection == '' || sdescription == ''
+    ||   sprogression == '' || sSeverity == '' || sSuface == '' ){
         return
     }
     e.preventDefault();
@@ -101,17 +110,18 @@ bntSalvar.onclick = e =>{
         itens[id].location = slocation.value
         itens[id].length = sleng.value
         itens[id].width = swid.value
-        [id].width = .value
-        [id].width = .value
-        [id].width = .value
-        [id].width = .value
-        [id].width = .value
-        [id].width = .value
-        [id].width = .value
+        itens[id].progression = progression.value
+        itens[id].Layer = sLayer.value
+        itens[id].Section = sSection.value
+        itens[id].description = sdescription.value
+        itens[id].Severity = sSeverity.value
+        itens[id].Suface= sSuface.value
+      
 
       } else {
-        itens.push({'location': slocation.value, 'length':  sleng.value, 'width': swid.value
-    '': .value, '': .value, '': .value, '': .value, '': .value, '': .value, '': .value})
+        itens.push({'Location': slocation.value, 'Length':  sleng.value, 'Width': swid.value,
+    'Progression': sprogression.value, 'Layer': sLayer.value, 'Severity': sSeverity.value, 
+    'Secition': sSection.value,  'Description': sdescription.value, 'Surface': sSuface.value})
       }
     
       setItensBD()
