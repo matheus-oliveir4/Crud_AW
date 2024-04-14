@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Defect list</span>
+            <button onclick="openModal()" id="new">New Damage</button>
+        </div>
+
+        <div class="divTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>location</th>
+                        <th>Length</th>
+                        <th>width</th>
+                        <th class="acao">Edit</th>
+                        <th class="acao"> Delet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-container">
+            <div class="modal">
+                <form>
+                
+                    <select name="defect" id="description" required>
+                        <option value="">Description</option>
+                    </select>
+                    <select name="defect" id="severity"  required>
+                        <option value="">Severity</option>
+                    </select>
+                    <input type="text" name="defect1" id="location" placeholder="Location"required>
+                    </input >
+                    <input type="text" name="defect2" id="leng" placeholder="Length(mm)" required>
+                    </input>
+                    <input type="text" name="defect3" id="width" placeholder="Width(mm)" required>
+                    </input>
+                     <select name="defect" id="section" required>
+                        <option value="">Section</option>
+                    </select>
+                     <select name="defect" id="layer" required>
+                        <option value="">Layer</option>
+                    </select>
+                     <select name="defect" id="suface" required>
+                        <option value="">Suface</option>
+                    </select>
+                     
+                    <select name="defect" id="progression" required>
+                        <option value="">Progression</option>
+                    </select>
+                <button id="btnSalvar"> Salvar</button>
+           </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="scrpt.js"></script>
+</body>
+</html>
