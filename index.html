@@ -35,36 +35,82 @@
         <div class="modal-container">
             <div class="modal">
                 <form>
-                
-                    <select name="defect" id="description" required>
-                        <option value="">Description</option>
+                    <label for="x-description">Description</label>
+                    <select name="defect" id="x-description" required>
+                        <option value="Rugas - Longitudinal">
+                      
+                            <option value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
+                            <option value="Camada contaminada"><p>Camada contaminada</p></option>
+                            <option value="Furos - Inserto do BF"><p>Furos no laminado - Inserto do BF</p></option>
+                            <option value="LPS/LCTU - Root Chamber"><p>LPS/LCTU - Root Chamber </p></option>
+                            <option value="Furos no laminado - Casca"> <p>Holes in laminate - Shell</p></option>
                     </select>
-                    <select name="defect" id="severity"  required>
-                        <option value="">Severity</option>
+                    <label for="x-severity">Severity</label>
+                    <select name="defect" id="x-severity"  required>
+                  
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
-                    <input type="text" name="defect1" id="location" placeholder="Location"required>
+                    <label for="x-location">Location</label>
+                    <input type="text" name="defect" id="x-location" placeholder="Location"required>
                     </input >
-                    <input type="text" name="defect2" id="leng" placeholder="Length(mm)" required>
+                    <label for="x-leng">Length</label>
+                    <input type="text" name="defect" id="x-leng" placeholder="Length(mm)" required>
                     </input>
-                    <input type="text" name="defect3" id="width" placeholder="Width(mm)" required>
+                    <label for="x-width">Width</label>
+                    <input type="text" name="defect" id="x-width" placeholder="Width(mm)" required>
                     </input>
-                     <select name="defect" id="section" required>
-                        <option value="">Section</option>
+                    <label for="x-section">Section</label>
+                     <select name="defect" id="x-section" required>
+                  
+                        <option value="LE">LE</option>
+                        <option value="TE">TE</option>
+                        <option value="CE">CE</option>
                     </select>
-                     <select name="defect" id="layer" required>
-                        <option value="">Layer</option>
+                    <label for="x-layer">Layer</label>
+                     <select name="defect" id="x-layer" required>
+                  
+                        <option value="No Issues">No Issues</option>
+                        <option value="Light Structural">Light Structural</option>
+                        <option value="Minor Structural">Minor Structural</option>
+                        <option value="Minor Structural">Medium Structural</option>
+                        <option value="High Structural">High Structural</option>
+                        <option value="Critical Structural">Critical Structural</option>
+                      
                     </select>
-                     <select name="defect" id="suface" required>
-                        <option value="">Suface</option>
+                    <label for="x-suface">Suface</label>
+                     <select name="defect" id="x-suface" required>
+                  
+                        <option value="Internal">Internal</option>
+                        <option value="External">External</option>
+                        
                     </select>
-                     
-                    <select name="defect" id="progression" required>
-                        <option value="">Progression</option>
+                    <label for="x-progression">Progression</label>
+                    <select name="defect" id="x-progression"required>
+                  
+                        <option value="New">New</option>
+                        <option value="Change">Change</option>
+                        <option value="Keep">Keep</option>
+                        <option value="Increased">Increased</option>
+                    </select>
+                    <label for="x-recomendation">Recomendation</label>
+                    <select name="defect" id="x-recomendation">
+                      
+                            <option value="N/A">N/A</option>
+                            <option value="Monitoring at the next inspection opportunity">Monitoring at the next inspection opportunity</option>
+                            <option value="Monitoring within 12 months period">Monitoring within 12 months period</option>
+                            <option value="Repair within 6 months">Repair within 6 months</option>
+                            <option value="Repair within 3 months">Repair within 3 months</option>
+                            <option value="Stop the turbine and repair">Stop the turbine and repair</option>
                     </select>
                 <button id="btnSalvar"> Salvar</button>
            </form>
             </div>
-
+s
         </div>
     </div>
     <script src="scrpt.js"></script>

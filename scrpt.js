@@ -1,29 +1,33 @@
 const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
 
-const sdescription = document.getElementById('description')
-var SevSelect = description.value
+const sDescription = document.querySelector('#x-description')
 
-const sSeverity = document.getElementById('severity')
-var SevSelect = selectSev.value
+const sSeverity = document.querySelector('#x-severity')
 
-var slocation = document.querySelector('#location')
-var sleng = document.querySelector('#leng')
-var swid = document.querySelector('#width')
+var sLocation = document.querySelector('#x-location')
+var sLeng = document.querySelector('#x-leng')
+var sWid = document.querySelector('#x-width')
 
-const sSection = document.getElementById('section')
-var section = selSection.value
+var sSection = document.querySelector('#x-section')
 
-const sLayer = document.getElementById('layer')
-var layer = selLayer.value
+var sLayer = document.querySelector('#x-layer')
 
-const sSuface = document.getElementById('suface')
-var suface = selSuface.value
+var sSuface = document.querySelector('#x-suface')
 
-const sprogression = document.getElementById('progression')
-var progression= selectSev.value
+var sProgression = document.querySelector('#x-progression')
 
-const bntSalvar = document.getElementById('#bntSalvar')
+var sRecomendation = document.querySelector('#x-recomendation')
+
+var bntSalvar = document.getElementById('#bntSalvar')
+var description = sDescription.value
+var severity = sSeverity.value
+var section = sSection.value
+var layer = sLayer.value
+var suface = sSuface.value
+var progression = sProgression.value
+var recomendation = sRecomendation.value
+
 let itens 
 let id
 
@@ -49,6 +53,7 @@ function insertItem(item, index){
     <td>${item.layer}</td>
     <td>${item.suface}</td>
     <td>${item.progression}</td>
+    <td>${item.recomendation}</td>
    
     
     <td class="acao">
@@ -76,52 +81,55 @@ function openModal(edit = false, index = 0){
         modal.classList.remove('active')}
     }
     if(edit){
-        sdescription.value = itens[index].description
-        slocation.value = itens[index].location
-        sleng.value = itens[index].length
-        swid.value = itens[index].width
-        sSeverity.value = itens[index].
-        sSection.value = itens[index].
-        sLayer.value = itens[index].
-        sSuface.value = itens[index].
-        sprogression.value = itens[index].
+        sDescription.value = itens[index].description
+        sLocation.value = itens[index].location
+        sLeng.value = itens[index].length
+        sWid.value = itens[index].width
+        sSeverity.value = itens[index].severity
+        sSection.value = itens[index].section
+        sLayer.value = itens[index].layer
+        sSuface.value = itens[index].suface
+        sProgression.value = itens[index].progression
+        sRecomendation.value = itens[index].recomendation
         
         id = index
     } else{
-        slocation.value = '';
-        sleng.value = '';
-        swid.value = '';
+        sLocation.value = '';
+        sLeng.value = '';
+        sWid.value = '';
         sLayer.value = '';
         sSection.value = '';
-        sdescription.value = '';
+        sDescription.value = '';
         sSuface.value = '';
-        sprogression.value = '';
+        sProgression.value = '';
         sSeverity.value = '';
+        sProgression.value = '';
+        sRecomendation.value = '';
     }
 }
 
 bntSalvar.onclick = e =>{
-    if(slocation == '' || sleng == '' || swid == '' ||  sLayer == '' || sSection == '' || sdescription == ''
-    ||   sprogression == '' || sSeverity == '' || sSuface == '' ){
+    if(sLocation == '' || sLeng == '' || sWid == '' ||  sLayer == '' || sSection == '' || sDescription == ''
+    ||   sProgression == '' || sSeverity == '' || sSuface == ''|| sRecomendation == '' ){
         return
     }
     e.preventDefault();
     if (id !== undefined) {
-        itens[id].location = slocation.value
-        itens[id].length = sleng.value
-        itens[id].width = swid.value
-        itens[id].progression = progression.value
+        itens[id].location = sLocation.value
+        itens[id].length = sLeng.value
+        itens[id].width = sWid.value
+        itens[id].progression = sProgression.value
         itens[id].Layer = sLayer.value
         itens[id].Section = sSection.value
-        itens[id].description = sdescription.value
+        itens[id].description = sDescription.value
         itens[id].Severity = sSeverity.value
         itens[id].Suface= sSuface.value
-      
+        itens[id].Recomendation= sRecomendation.value
 
       } else {
-        itens.push({'Location': slocation.value, 'Length':  sleng.value, 'Width': swid.value,
-    'Progression': sprogression.value, 'Layer': sLayer.value, 'Severity': sSeverity.value, 
-    'Secition': sSection.value,  'Description': sdescription.value, 'Surface': sSuface.value})
+        itens.push({'Location': sLocation.value, 'Length':  sLeng.value, 'Width': sWid.value,
+    'Progression': sProgression.value, 'Layer': sLayer.value, 'Severity': sSeverity.value, 
+    'Secition': sSection.value,  'Description': sDescription.value, 'Surface': sSuface.value, 'Recomendation': sRecomendation.value})
       }
     
       setItensBD()
