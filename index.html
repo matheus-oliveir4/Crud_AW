@@ -21,9 +21,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>location</th>
+                        <th>Description</th>
+                        <th>Severity</th>
+                        <th>Location </th>
                         <th>Length</th>
-                        <th>width</th>
+                        <th>Width</th>
+                        <th>Section</th>
+                        <th>Layer</th>
+                        <th>Suface</th>
+                        <th>Progression</th>
+                        <th>Recomendation</th>
                         <th class="acao">Edit</th>
                         <th class="acao"> Delet</th>
                     </tr>
@@ -36,17 +43,17 @@
             <div class="modal">
                 <form>
                     <label for="x-description">Description</label>
-                    <select name="defect" id="x-description" required>
+                    <select type="text"  name="defect" id="x-description" required>
                         <option value="Rugas - Longitudinal">
                       
-                            <option value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
+                            <option  value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
                             <option value="Camada contaminada"><p>Camada contaminada</p></option>
                             <option value="Furos - Inserto do BF"><p>Furos no laminado - Inserto do BF</p></option>
                             <option value="LPS/LCTU - Root Chamber"><p>LPS/LCTU - Root Chamber </p></option>
                             <option value="Furos no laminado - Casca"> <p>Holes in laminate - Shell</p></option>
                     </select>
                     <label for="x-severity">Severity</label>
-                    <select name="defect" id="x-severity"  required>
+                    <select  type="text" name="defect" id="x-severity"  required>
                   
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -65,14 +72,14 @@
                     <input type="text" name="defect" id="x-width" placeholder="Width(mm)" required>
                     </input>
                     <label for="x-section">Section</label>
-                     <select name="defect" id="x-section" required>
+                     <select  type="text" name="defect" id="x-section" required>
                   
                         <option value="LE">LE</option>
                         <option value="TE">TE</option>
                         <option value="CE">CE</option>
                     </select>
                     <label for="x-layer">Layer</label>
-                     <select name="defect" id="x-layer" required>
+                     <select  type="text" name="defect" id="x-layer" required>
                   
                         <option value="No Issues">No Issues</option>
                         <option value="Light Structural">Light Structural</option>
@@ -83,7 +90,7 @@
                       
                     </select>
                     <label for="x-suface">Suface</label>
-                     <select name="defect" id="x-suface" required>
+                     <select  type="text" name="defect" id="x-suface" required>
                   
                         <option value="Internal">Internal</option>
                         <option value="External">External</option>
@@ -98,7 +105,7 @@
                         <option value="Increased">Increased</option>
                     </select>
                     <label for="x-recomendation">Recomendation</label>
-                    <select name="defect" id="x-recomendation">
+                    <select  type="text" name="defect" id="x-recomendation">
                       
                             <option value="N/A">N/A</option>
                             <option value="Monitoring at the next inspection opportunity">Monitoring at the next inspection opportunity</option>
@@ -110,9 +117,9 @@
                 <button id="btnSalvar"> Salvar</button>
            </form>
             </div>
-s
+
         </div>
     </div>
-    <script src="scrpt.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
