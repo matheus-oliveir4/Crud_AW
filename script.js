@@ -122,13 +122,13 @@ btnSalvar.onclick = e => {
         itens[id].section = sSection.value
         itens[id].description = sDescription.value
         itens[id].severity = sSeverity.value
-        itens[id].suface= sSuface.value
+        itens[id].suface = sSuface.value
         itens[id].recomendation= sRecomendation.value
 
       } else {
         itens.push({'location': sLocation.value, 'length':  sLeng.value, 'width': sWid.value,
     'progression': sProgression.value, 'layer': sLayer.value, 'severity': sSeverity.value, 
-    'secition': sSection.value,  'description': sDescription.value, 'surface': sSuface.value, 'Recomendation': sRecomendation.value})
+    'section': sSection.value,  'description': sDescription.value, 'suface': sSuface.value, 'recomendation': sRecomendation.value})
       }
   
       setItensBD()
