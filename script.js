@@ -101,7 +101,7 @@ function editItem(index) {
     <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
   </td>
   <td class="acao">
-    <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
+    <button onclick="deleteItem(${index})" id="delete"><i class='bx bx-trash'></i></button>
   </td>
     `
     tbody.appendChild(tr)
